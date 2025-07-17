@@ -1,0 +1,1988 @@
+/* 1. VARIABLES DE DISEÑO */
+/* 1. VARIABLES DE DISEÑO */
+:root {
+  --primary-color-main: #5F306D;      /* Morado principal de UvaClub (botones, énfasis) */
+  --primary-color-dark: #4A0E5C;      /* Morado más oscuro (hover, fondos de foto) */
+  --secondary-color-pink: #FBEDDD;    /* Beige rosado de fondo (body, secciones claras) */
+  --accent-color-gold: #d77cf9;       /* Dorado para estrellas, detalles (opcional) */
+  --text-color-dark: #4A0E5C;         /* Gris oscuro para textos generales (más legible) */
+  --text-color-light: #FFF3E5;        /* Blanco cremoso para textos sobre fondos oscuros */
+  --heading-color: #6A005A;           /* Color específico para títulos (morado más rojizo) */
+
+  --font-family-headings: 'Playfair Display', serif; /* Fuente para títulos */
+  --font-family-body: 'Noto Sans', sans-serif;       /* Fuente para párrafos y texto general */
+
+  --section-padding: 100px; /* Ya lo estamos usando, mantenemos */
+}
+
+/* 2. ESTILOS GENERALES */
+body {
+  font-family: var(--font-family-body); /* Aplicamos Noto Sans al cuerpo */
+  color: var(--text-color-dark); /* Color de texto general oscuro */
+  background-color: var(--secondary-color-pink); /* Fondo beige rosado */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Estilos para todos los títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings); /* Aplicamos Playfair Display a todos los títulos */
+  color: var(--heading-color); /* Color específico para títulos */
+}
+
+/* Estilo para los títulos principales que ya usas con h2-custom */
+h2.h2-custom {
+  color: var(--heading-color); /* Reafirmamos el color para h2.h2-custom */
+  font-weight: bold; /* Playfair Display Bold se activa aquí si usas font-weight: bold */
+}
+
+/* Estilo para los párrafos generales que ya usas con p-custom */
+p.p-custom {
+  font-family: var(--font-family-body); /* Aseguramos Noto Sans para párrafos específicos */
+  color: var(--text-color-dark); /* Color de texto general */
+  line-height: 1.7;
+}
+
+
+
+/* 3. NAVBAR */
+.navbar {
+  background-color: transparent; /* Transparente al inicio */
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background 0.4s ease-in-out; /* Transición para color y degradado */
+  padding: 15px 0;
+}
+
+.navbar.scrolled {
+  /* Degradado cuando se hace scroll */
+  background: linear-gradient(180deg, #4A0E5C 0%, #876492 100%);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para que destaque */
+}
+
+/* Colores de texto para el navbar-brand y todos los nav-link */
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: var(--font-family-headings); /* Playfair Display para el logo */
+  color: var(--text-color-light) !important; /* ¡Aseguramos el color blanco cremoso! */
+}
+
+/* Aseguramos que todos los enlaces con la clase nav-link dentro del navbar tengan el color */
+.navbar-nav .nav-link { /* Selector más específico para nav-links */
+  color: var(--text-color-light) !important; /* Blanco cremoso al inicio y al hacer scroll */
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-color-gold) !important; /* Dorado al pasar el mouse, asegurando */
+}
+
+/* Asegurarse que el botón del toggler (hamburguesa) en mobile también tenga el color adecuado */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5); /* Borde blanco semi-transparente */
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Icono de hamburguesa blanco */
+}
+
+/* Color del texto del dropdown en mobile si aplica */
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: var(--text-color-dark); /* Color oscuro para los ítems del dropdown en mobile */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: var(--secondary-color-pink);
+    color: var(--primary-color-main);
+}
+
+
+/*--------------------------------------------------------------
+# 4. HERO SECTION
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* *** FONDO COMBINADO: IMAGEN PRIMERO, LUEGO GRADIENTE *** */
+  background:
+    url('img/fondo-textura-hero.png') center center / cover no-repeat, /* Tu imagen de fondo con uvas o patrones */
+    linear-gradient(180deg, #361152 4.33%, #876492 63%, #FFF3E5 100%); /* Tu degradado */
+
+  /* *** AÑADIR BACKGROUND-BLEND-MODE *** */
+  background-blend-mode: multiply, normal; /* CLAVE para mezclar la imagen de fondo con el gradiente */
+
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Estilos para el texto y la imagen dentro del .container */
+.hero .container {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+/* Estilos específicos para el texto del Hero para asegurar legibilidad sobre el fondo */
+.hero h1.h1-custom {
+  color: #FBEDDD; /* Color de texto blanco para contrastar con fondo oscuro */
+  margin-bottom: 20px;
+  font-size: 3rem; /* Ajusta el tamaño de la fuente si es necesario */
+  line-height: 1.2;
+}
+
+.hero p.p-custom {
+  color: #FBEDDD; /* Blanco semi-transparente para párrafos */
+  max-width: 450px; /* Limita el ancho del párrafo para mejor lectura */
+  margin-bottom: 30px;
+}
+
+.hero .col-lg-6 img {
+  max-width: 750px; /* Ajusta el tamaño máximo de la imagen */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* Asegura el border-radius de 8px si img-rounded lo está sobrescribiendo */
+
+  /* *** SOLUCIÓN CLAVE PARA LA SOMBRA *** */
+  box-shadow: none !important; /* Elimina cualquier sombra en estado normal */
+  transform: none !important; /* Elimina cualquier transformación (como un ligero escalado) en estado normal */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para suavizar cualquier posible cambio */
+}
+
+/* También asegurar que no haya sombra ni transformación al pasar el mouse */
+.hero .col-lg-6 img:hover {
+  box-shadow: none !important; /* Elimina cualquier sombra al pasar el mouse */
+  transform: none !important; /* Elimina cualquier transformación al pasar el mouse */
+}
+
+/* --- Estilos del botón del Hero --- */
+.btn-hero-custom {
+  border-radius: 7px;
+  border: 3px solid var(#FBEDDD); /* Borde blanco cremoso */
+  background: #FBEDDD;
+  color: var(--primary-color-main); /* Texto morado oscuro */
+  padding: 12px 30px; /* Ajusta el padding para el tamaño del botón */
+  font-weight: 600; /* Texto seminegrita */
+  font-size: 1.1rem;
+  text-transform: uppercase; /* Si quieres el texto en mayúsculas como en la imagen de referencia */
+  transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+.btn-hero-custom:hover {
+  background: transparent; /* Fondo transparente al pasar el mouse */
+  color: var(--text-color-light); /* Texto blanco cremoso al pasar el mouse */
+  border-color: var(--text-color-light); /* Borde blanco cremoso al pasar el mouse */
+}
+
+/* Media Queries para el Hero */
+@media (max-width: 991.98px) { /* Tablet */
+  .hero {
+    min-height: auto;
+    padding: 90px 0 44px 0;
+  }
+  .hero .col-lg-6.text-center {
+    margin-top: 40px;
+  }
+  .hero h1.h1-custom {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) { /* Mobile */
+  .hero {
+    text-align: center;
+  }
+  .hero .d-flex { /* Esto ya no es tan necesario si solo hay un botón, pero se mantiene si se vuelve a usar flex */
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero h1.h1-custom {
+    font-size: 2.2rem;
+  }
+  .hero p.p-custom {
+    font-size: 0.9rem;
+  }
+  .hero .col-lg-6.text-center {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .btn-hero-custom {
+      padding: 10px 25px;
+      font-size: 1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# ESTILOS GENERALES PARA TÍTULOS CON LÍNEAS LATERALES (VERSIÓN FINAL Y COMPROBADA)
+--------------------------------------------------------------*/
+
+/* Contenedor del título para centrarlo */
+.section-title-wrapper {
+  text-align: center; /* Centra el h2-custom-con-lineas dentro de este wrapper */
+  margin-bottom: 20px; /* Mantén el margen inferior aquí */
+}
+
+.h2-custom-con-lineas {
+  position: relative; /* Crucial para posicionar los pseudo-elementos */
+  display: inline-block; /* Permite que el ancho se ajuste al contenido del texto */
+  padding: 0 15px; /* Espacio entre el texto del título y el inicio de la línea */
+  z-index: 1; /* Asegura que el texto del título esté por encima */
+  vertical-align: middle; /* Ayuda a la alineación vertical */
+  white-space: nowrap; /* Evita que el texto del título se rompa en varias líneas */
+  box-sizing: content-box; /* Asegura que padding no se sume al width en calculos de 100% */
+}
+
+/* Línea izquierda */
+.h2-custom-con-lineas::before {
+  content: '';
+  position: absolute;
+  top: 50%; /* Centra verticalmente la línea */
+  right: 100%; /* El borde DERECHO de la línea se alinea con el borde IZQUIERDO del h2 */
+  margin-right: 15px; /* Espacio entre el texto del h2 y el inicio de la línea */
+  width: 50px; /* Ancho de la línea. AJUSTA ESTE VALOR */
+  height: 2px; /* Grosor de la línea. AJUSTA ESTE VALOR */
+  background-color: var(--heading-color); /* Color de la línea */
+  transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
+  z-index: -1; /* Detrás del texto */
+  /* *** ADICIÓN CLAVE PARA CONSISTENCIA *** */
+  box-sizing: content-box;
+}
+
+/* Línea derecha */
+.h2-custom-con-lineas::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Centra verticalmente la línea */
+  left: 100%; /* El borde IZQUIERDO de la línea se alinea con el borde DERECHO del h2 */
+  margin-left: 15px; /* Espacio entre el texto del h2 y el inicio de la línea */
+  width: 50px; /* Ancho de la línea. AJUSTA ESTE VALOR */
+  height: 2px; /* Grosor de la línea. AJUSTA ESTE VALOR */
+  background-color: var(--heading-color); /* Color de la línea */
+  transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
+  z-index: -1; /* Detrás del texto */
+  /* *** ADICIÓN CLAVE PARA CONSISTENCIA *** */
+  box-sizing: content-box;
+}
+
+/* Media Query para ajustar en pantallas más pequeñas */
+@media (max-width: 767.98px) {
+  .h2-custom-con-lineas {
+    padding: 0 10px; /* Reduce el padding en móviles */
+    white-space: normal; /* Permite que el texto se rompa en mobile si es necesario */
+  }
+  .h2-custom-con-lineas::before {
+    width: 30px; /* Ancho más pequeño en mobile */
+    margin-right: 10px; /* Ajusta el margen para mobile */
+    box-sizing: content-box; /* Asegurar también en mobile */
+  }
+  .h2-custom-con-lineas::after {
+    width: 30px; /* Ancho más pequeño en mobile */
+    margin-left: 10px; /* Ajusta el margen para mobile */
+    box-sizing: content-box; /* Asegurar también en mobile */
+  }
+}
+/*--------------------------------------------------------------
+# SECCIÓN: QUIÉNES SOMOS (ABOUT) - Ajustes de color de texto
+--------------------------------------------------------------*/
+#quienes-somos {
+  /* Asegúrate de que esta sección tenga un padding vertical adecuado si usabas section-spacing */
+  padding-top: 60px; /* Ajusta según lo que tu section-spacing daba */
+  padding-bottom: 60px; /* Ajusta según lo que tu section-spacing daba */
+
+  /* Estilos para la textura de fondo */
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  /* Podrías querer un background-attachment: fixed; para un efecto parallax */
+  /* background-attachment: fixed; */
+}
+
+/* Mantén estos estilos tal cual, ya que son para el color y no afectan la posición */
+#quienes-somos h2.h2-custom { /* Título principal: "Nuestra pasión por el vino" */
+  color: var(--heading-color); /* Usamos la variable para el color del título */
+}
+
+#quienes-somos p.p-custom.mb-5 { /* Párrafo introductorio debajo del título principal */
+  color: var(--text-color-dark); /* Usamos la variable para el texto general */
+}
+/* ... el resto de tus estilos de la sección Quienes Somos ... */
+
+/* Ajuste del botón 'Conocé más' para que tenga un borde como en tu imagen */
+.btn.custom-btn-outline-gold {
+  border: 2px solid var(--heading-color); /* Usamos la variable para el borde del botón */
+  color: var(--heading-color); /* Usamos la variable para el color del texto */
+  background-color: transparent;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn.custom-btn-outline-gold:hover {
+  background-color: var(--heading-color); /* Fondo al pasar el mouse */
+  color: #fff;
+}
+
+/* Media Queries para ajustar la sección en diferentes tamaños de pantalla */
+@media (max-width: 991.98px) { /* Tablets y móviles */
+  #quienes-somos .text-lg-start {
+    text-align: center !important;
+    margin-top: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: ¿QUÉ TE OFRECEMOS? (OFFER)
+--------------------------------------------------------------*/
+#que-ofrecemos {
+ background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+#que-ofrecemos h2.h2-custom {
+  color: #6a005a; /* Color del título principal: "¿CÓMO FUNCIONA UVACLUB?" */
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.offer-card {
+  /* ELIMINAMOS el background-color para que las tarjetas sean transparentes */
+  background-color: transparent; /* Ahora las tarjetas no tienen color de fondo propio */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  /* Eliminamos el 'color: #fff;' global de la tarjeta para definirlo específicamente en h5 y p */
+  box-shadow: none; /* Quitamos la sombra de las tarjetas si quieres un look más plano */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantenemos la transición para el hover */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px); /* Ajustado para un efecto "flotante" un poco más pronunciado */
+  /* Puedes añadir una sombra al pasar el mouse si deseas un efecto de elevación visual */
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */ 
+}
+
+.offer-icon {
+  width: 100px; /* Tamaño del icono en escritorio (ajusta este valor) */
+  height: auto;
+  margin-bottom: 20px;
+  /* Si tus iconos PNG ya son de color morado o del color deseado, ELIMINA la línea 'filter'.
+     Si tus iconos PNG son de otro color y quieres que sean morados, o si son negros y quieres darles un tinte,
+     podrías usar filter, pero si ya los tienes en el color correcto, es mejor quitarlo. */
+  /* filter: invert(30%) sepia(80%) saturate(2000%) hue-rotate(250deg) brightness(80%); */ /* Ejemplo para un tono morado */
+}
+
+.offer-card h5 {
+  color: #6a005a; /* Color del subtítulo (VINOS SELECCIONADOS, etc.) - Morado oscuro */
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.offer-card p.p-custom {
+  color: #555; /* Color del párrafo (descripción) - Gris oscuro para legibilidad */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ajustes responsivos para iconos y tarjetas en móviles */
+@media (max-width: 991.98px) { /* Tablets */
+  .offer-icon {
+    width: 80px; /* Reducir tamaño del icono en tablets */
+  }
+}
+
+@media (max-width: 767.98px) { /* Móviles */
+  .offer-card {
+    padding: 20px; /* Menor padding en móviles */
+  }
+  .offer-icon {
+    width: 70px; /* Reducir tamaño del icono en móviles */
+    margin-bottom: 15px;
+  }
+  .offer-card h5 {
+    font-size: 1.1rem;
+  }
+  .offer-card p.p-custom {
+    font-size: 0.9rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: PLANES DE SUSCRIPCIÓN - AJUSTES DE IMAGEN Y HEADER
+--------------------------------------------------------------*/
+#planes-suscripcion {
+  background:
+    url('img/textura-planes-principal.png') center center / cover no-repeat,
+    linear-gradient(180deg, #6C3A7C 0%, #FFF3E5 100%);
+  background-blend-mode: multiply, normal;
+  padding-top: 100px;
+  padding-bottom: var(--section-padding);
+}
+
+#planes-suscripcion h2.h2-custom {
+  color: #FFF3E5;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#planes-suscripcion p.p-custom.mb-5 {
+  color: #FFF3E5;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+/* Estilos para las tarjetas de plan (estado normal) */
+.plan-card {
+  border-radius: 10px;
+  border: 1px solid #4A0E5C;
+  background: #FFE9CF; /* Fondo de tarjeta claro en estado normal */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-card .plan-header {
+  width: 100%;
+  padding: 25px 0; /* Aumentamos el padding para dar más espacio a la imagen grande */
+  /* ELIMINAMOS el background-color y border-bottom para que sea como el resto de la tarjeta */
+  background-color: transparent; /* Hace el fondo de la cabecera transparente */
+  border-bottom: none; /* Elimina el borde inferior */
+}
+
+.plan-card .plan-logo {
+  max-width: 220px; /* ¡Hacemos la imagen del logo mucho más grande! Ajusta este valor si es necesario. */
+  height: auto;
+}
+
+.plan-card .plan-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.plan-card .plan-title {
+  color: #5F306D;
+  font-weight: bold;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.plan-card .plan-price {
+  color: #5F306D;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.plan-card .plan-price small {
+  font-size: 0.75em;
+  font-weight: normal;
+  color: inherit;
+}
+
+.plan-card .plan-features {
+  color: #5F306D;
+  text-align: left;
+  padding-left: 0;
+  margin-top: 15px;
+  margin-bottom: auto;
+  max-width: 250px;
+}
+
+.plan-card .plan-features li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.plan-card .plan-features li i {
+  color: #4A0E5C;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Estilo del botón (estado normal) */
+.plan-button {
+  border-radius: 7px;
+  border: 2px solid #4A0E5C;
+  background: transparent;
+  color: #4A0E5C;
+  padding: 8px 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 85%;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* Estilos de la tarjeta al pasar el mouse (HOVER) */
+.plan-card:hover {
+  border: 2px solid #4A0E5C;
+  background: #FFF3E5; /* Fondo de tarjeta más claro al hover */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Estilos del botón al pasar el mouse sobre la TARJETA */
+.plan-card:hover .plan-button {
+  background: #4A0E5C;
+  color: #FFF3E5;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 767.98px) {
+  .plan-card .plan-content {
+    padding: 15px;
+  }
+  .plan-card .plan-logo {
+    max-width: 120px; /* Ajustamos el tamaño del logo en móviles también */
+  }
+  .plan-card .plan-title {
+    font-size: 1.2rem;
+  }
+  .plan-card .plan-price {
+    font-size: 1.8rem;
+  }
+  .plan-card .plan-features li {
+    font-size: 0.85rem;
+  }
+  .plan-button {
+    padding: 7px 20px;
+    font-size: 0.85rem;
+    width: 90%;
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: TU PRÓXIMA AVENTURA CON UVACLUB (POR QUÉ ELEGIR UVACLUB)
+--------------------------------------------------------------*/
+#proxima-aventura {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color-pink); /* Fondo beige rosado como en la imagen */
+}
+
+/* Capa para la imagen de fondo (hojas de uva) */
+.background-texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    url('img/textura-por-que-uvaclub.png') center top / cover no-repeat; /* Imagen de hojas de uva como en la referencia */
+  background-blend-mode: normal; /* No queremos mezcla aquí si solo es una imagen decorativa */
+  opacity: 1; /* Opacidad completa */
+  z-index: 0;
+}
+
+
+/* Contenido principal para que esté por encima de la textura */
+#proxima-aventura .container {
+  position: relative;
+  z-index: 1;
+}
+
+#proxima-aventura h2.h2-custom {
+  color: var(--heading-color); /* Color morado oscuro para el título */
+  font-weight: bold;
+}
+
+#proxima-aventura p.p-custom {
+  color: var(--text-color-dark); /* Color de texto oscuro para el párrafo */
+  line-height: 1.7;
+}
+
+/* Estilos de los ítems de característica (Selección Premium, etc.) */
+.feature-item {
+  color: var(--text-color-dark); /* Texto oscuro para los ítems */
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  /* Asegura que no haya sombra por defecto */
+  box-shadow: none;
+  /* Define una transición para el movimiento si lo quieres */
+  transition: transform 0.3s ease-out; /* Transición solo para la transformación */
+}
+
+.feature-item:hover {
+  box-shadow: none !important; /* ¡Elimina cualquier sombra al pasar el mouse, incluso las de Bootstrap! */
+  /* Ejemplo de movimiento: un ligero levantamiento */
+  transform: translateY(-5px); /* Mueve el ítem 5px hacia arriba al pasar el mouse */
+  /* Si no quieres movimiento, simplemente elimina la línea de transform */
+}
+
+.feature-icon-light {
+  color: var(--primary-color-dark); /* Color morado oscuro para los iconos de los ítems */
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+/* Asegurarse que la imagen principal de la sección no tenga sombra ni movimiento */
+.img-rounded-custom {
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: none !important; /* Elimina cualquier sombra en la imagen */
+  transform: none !important; /* Elimina cualquier transformación en la imagen */
+  transition: none; /* Asegura que no haya transiciones inesperadas en la imagen */
+}
+
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) {
+  #proxima-aventura .text-lg-start {
+    text-align: center !important;
+  }
+  #proxima-aventura .justify-content-lg-start {
+    justify-content: center !important;
+  }
+  .img-rounded-custom {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .feature-item {
+    font-size: 1rem;
+  }
+  .feature-icon-light {
+    font-size: 1.2rem;
+  }
+}
+/*--------------------------------------------------------------
+# SECCIÓN: CONOCE A NUESTRO EQUIPO
+--------------------------------------------------------------*/
+#nuestro-equipo {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+}
+
+#nuestro-equipo h2.h2-custom {
+  color: #6A005A; /* Color morado oscuro, similar al de la imagen */
+  font-weight: bold;
+}
+
+#nuestro-equipo p.p-custom {
+  color: #5F306D; /* Restaurado a gris oscuro para el párrafo introductorio para mejor legibilidad */
+  line-height: 1.7;
+}
+
+.team-member-card {
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para la animación */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.team-member-card:hover {
+  transform: translateY(-8px); /* Efecto de elevación al hover */
+}
+
+.team-photo {
+  width: 220px;
+  height: 250px;
+  object-fit: contain;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+/* --- ESTILOS DE NOMBRE Y ROL AJUSTADOS --- */
+.team-small-name { /* Nombre chiquito primero */
+  color: #5F306D; /* Color para el nombre, un gris más discreto */
+  font-size: 0.9rem; /* Nombre más pequeño */
+  font-weight: normal; /* No negrita */
+  margin-top: 0;
+  margin-bottom: 5px; /* Pequeño margen debajo del nombre */
+  text-transform: uppercase; /* Si quieres el nombre también en mayúsculas */
+}
+
+.team-role-main { /* Rol más grande debajo */
+  color: #5F306D; /* Color del rol, similar al que usabas para el nombre principal */
+  font-size: 1.4rem; /* Rol más grande */
+  font-weight: bold; /* Asegura que el rol sea negrita como pediste en el HTML */
+  margin-top: 0;
+  margin-bottom: 10px; /* Margen debajo del rol antes de la biografía */
+  text-transform: uppercase; /* Mantiene el rol en mayúsculas */
+}
+
+.team-bio { /* Renombrado de .team-role en el HTML, y ahora este es el texto de la biografía */
+  color: #5F306D; /* Color para la biografía breve, ajustado para ser más legible */
+  font-size: 0.9rem; /* Ajustado para ser un poco más pequeño */
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 767.98px) {
+  .team-photo {
+    width: 150px;
+    height: 180px;
+  }
+  .team-small-name {
+    font-size: 0.8rem;
+  }
+  .team-role-main {
+    font-size: 1.2rem;
+  }
+  .team-bio {
+    font-size: 0.8rem;
+  }
+  .team-member-card {
+    padding: 20px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# SECCIÓN: GALERÍA - NUESTRA COMUNIDAD EN IMÁGENES
+--------------------------------------------------------------*/
+#galeria-comunidad {
+  background-color: var(--secondary-color-pink);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.galeria-fondo-limitado {
+  background:
+    url('img/textura-de-carton.png') center center / cover no-repeat,
+    linear-gradient(180deg, #5F3D6A 0%, #FBEDDD 100%);
+  background-blend-mode: luminosity, normal;
+  
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  
+  border-radius: 15px;
+  overflow: hidden;
+  
+  text-align: center; /* ESTO DEBERÍA CENTRAR EL TEXTO Y EL PÁRRAFO */
+}
+
+/* Colores de texto para que contrasten bien */
+#galeria-comunidad h2.h2-custom {
+  color: #FBEDDD; /* Color claro para el título */
+  font-weight: bold;
+}
+
+#galeria-comunidad p.p-custom {
+  color: #FBEDDD; /* Color claro para el párrafo */
+  line-height: 1.7;
+  /* IMPORTANTE: SI TIENES margin: auto en alguna parte para este párrafo en CSS, quítalo.
+     La clase mx-auto en el HTML (margin-left/right: auto) es suficiente para centrar el bloque p. */
+}
+
+.masonry__container {
+  column-count: 3;
+  column-gap: 1.5rem;
+  padding: 0 15px;
+}
+
+.masonry__item {
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry__item:hover {
+  transform: translateY(-5px);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) {
+  .masonry__container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .masonry__container {
+    column-count: 1;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# SECCIÓN: TESTIMONIOS - SUS VOCES, SUS EXPERIENCIAS
+--------------------------------------------------------------*/
+#testimonios {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  /* El color de fondo de la sección principal viene del body, que asumimos es el beige rosado */
+}
+
+#testimonios h2.h2-custom {
+  color: var(--heading-color); /* Morado oscuro para el título */
+  font-weight: bold;
+  margin-bottom: 20px; /* Agregamos un margen inferior al título */
+}
+
+#testimonios p.p-custom {
+  color: var(--text-color-dark); /* Gris oscuro para el párrafo introductorio */
+  line-height: 1.7;
+  max-width: 800px; /* Limita el ancho del párrafo para mejor lectura */
+  margin: 0 auto 50px auto; /* Centra el párrafo y le da un margen inferior generoso */
+}
+
+.testimonial-card {
+  background-color: #FFE9CF; /* Color normal de la tarjeta (beige más claro) */
+  border-radius: 10px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Mantenemos la sombra sutil */
+  /* --- ¡NUEVO! Borde para la tarjeta en estado normal --- */
+  border: 1px solid #5F306D; /* Borde de 2px sólido color #5F306D */
+  /* ---------------------------------------------------- */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Asegúrate de que border-color esté en la transición */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Agrega un pequeño margen inferior entre tarjetas en vista apilada (mobile) */
+}
+
+.testimonial-card:hover {
+  background-color: #5F306D; /* Color de fondo morado oscuro al hover */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  /* --- ¡NUEVO! Puedes cambiar el color del borde al hover si lo deseas, o mantenerlo --- */
+  border-color: #5F306D; /* Aquí lo mantengo igual que el fondo al hover para que se "funda" */
+  /* Si quieres que se invierta a un color claro, usa var(--text-color-light) */
+}
+
+.testimonial-card:hover .testimonial-username,
+.testimonial-card:hover .testimonial-title,
+.testimonial-card:hover .testimonial-text,
+.testimonial-card:hover .testimonial-stars i,
+.testimonial-card:hover .social-icon {
+  color: var(--text-color-light); /* Color del texto y estrellas a blanco claro al hover */
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid var(--primary-color-dark); /* Borde morado oscuro para el avatar */
+}
+
+.testimonial-username {
+  font-weight: bold;
+  color: var(--primary-color-dark); /* Color del nombre de usuario morado oscuro */
+  font-size: 1rem;
+}
+
+.social-icon {
+  color: var(--primary-color-dark); /* Color del icono social morado oscuro */
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.testimonial-title {
+  color: var(--primary-color-dark); /* Color del título "EXCELENTE" morado oscuro */
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.testimonial-stars {
+  color: var(--accent-color-gold); /* Color de las estrellas (dorado) */
+  font-size: 1rem;
+}
+
+.testimonial-text {
+  color: var(--text-color-dark); /* Color del texto del comentario */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Estilos de los indicadores del carrusel */
+.carousel-indicators {
+    margin-top: 80px; /* ¡Aumentado el espacio para evitar superposición! */
+    position: relative; /* Aseguramos que se posicione correctamente */
+    z-index: 2; /* Opcional: aseguramos que estén por encima de otros elementos si hay conflicto de z-index */
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--primary-color-main-light); /* Color de los puntos inactivos */
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color-dark); /* Color del punto activo */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) {
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial-card {
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+  #testimonios p.p-custom {
+    margin-bottom: 30px; /* Menos margen en mobile */
+  }
+  .carousel-indicators {
+    margin-top: 50px; /* ¡Ajustado para mobile también! */
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: CONTACTO - HABLEMOS DE VINOS
+--------------------------------------------------------------*/
+#contacto {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  /* El color de fondo de la sección principal viene del body */
+}
+
+#contacto h2.h2-custom {
+  color: #6A005A; /* Color morado oscuro del título*/
+  font-weight: bold;
+}
+
+#contacto p.p-custom {
+  color: #555; /* Gris oscuro para el mini texto */
+  line-height: 1.7;
+}
+
+/* Contenedor principal de la sección de contacto para limitar el ancho en escritorios */
+#contacto .container {
+    max-width: 1200px; /* Limita el ancho máximo del contenedor principal en pantallas grandes */
+    /* Puedes ajustar este valor. Un valor entre 960px y 1200px suele funcionar bien. */
+}
+
+.contact-image-container {
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  max-width: 500px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-image-container img {
+  border-radius: 20px;
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 2;
+    mix-blend-mode: multiply;
+}
+
+.contact-form {
+  border-radius: 10px;
+  padding: 40px; /* Padding del formulario */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Sombra para el formulario */
+  /* Limitar el ancho del formulario mismo en pantallas muy grandes, si es necesario */
+  /* max-width: 500px; */ /* Descomenta y ajusta si el formulario dentro de la columna sigue siendo demasiado ancho */
+  /* margin-left: auto; */ /* Para centrarlo si le pones max-width */
+  /* margin-right: auto; */
+}
+
+.contact-form .form-control {
+  border-radius: 7px;
+  border: 1px solid #ced4da;
+  padding: 12px 15px;
+}
+
+.contact-form .form-control:focus {
+  border-color: #6A005A;
+  box-shadow: 0 0 0 0.25rem rgba(106, 0, 90, 0.25);
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: CONTACTO - HABLEMOS DE VINOS
+--------------------------------------------------------------*/
+/* ... (resto del CSS de la sección contacto sin cambios hasta el botón) ... */
+
+.btn-primary-custom {
+  background-color: transparent; /* Fondo transparente en estado normal */
+  border: 2px solid #5F306D; /* Borde con el color deseado (ajusta el grosor si quieres) */
+  color: #5F306D; /* Color del texto igual que el borde */
+  border-radius: 7px;
+  padding: 12px 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones para suavizar todos los cambios */
+}
+
+.btn-primary-custom:hover {
+  background-color: #5F306D; /* Fondo lleno con el color principal al pasar el mouse */
+  border-color: #5F306D; /* Asegura que el borde también sea del color principal (opcional si el fondo lo cubre) */
+  color: #F6ECDD; /* Texto blanco al pasar el mouse */
+}
+
+/* ... (resto del CSS de la sección contacto sin cambios) ... */
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) { /* Tabletas y móviles grandes */
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 767.98px) { /* Móviles pequeños */
+  .contact-image-container {
+    margin-bottom: 30px;
+    max-width: 350px; /* Ajuste para que la imagen no sea tan grande en móviles */
+  }
+  .contact-form {
+    padding: 20px;
+  }
+  .contact-form .form-control {
+    padding: 10px 12px;
+  }
+  .btn-primary-custom {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+/*--------------------------------------------------------------
+# SECCIÓN: PREGUNTAS FRECUENTES - TODO LO QUE NECESITÁS SABER SOBRE UVACLUB
+--------------------------------------------------------------*/
+#faq {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  /* El color de fondo de la sección principal viene del body */
+}
+
+#faq h2.h2-custom {
+  color: #6A005A; /* Color morado oscuro del título */
+  font-weight: bold;
+}
+
+#faq p.p-custom {
+  color: #555; /* Gris oscuro para el mini texto */
+  line-height: 1.7;
+}
+
+.custom-accordion .accordion-item {
+  background-color: #f7e7d6; /* Color de fondo del item del acordeón (similar al cuerpo) */
+  border: 1px solid rgba(0, 0, 0, 0.125); /* Borde suave */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Espacio entre los ítems del acordeón */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+}
+
+.custom-accordion .accordion-header {
+  border-bottom: none; /* Eliminar el borde inferior del header */
+}
+
+.custom-accordion .accordion-button {
+  background-color: transparent; /* Fondo transparente para el botón */
+  color: #5F306D; /* Color del texto de la pregunta (morado oscuro) */
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 20px 25px; /* Más padding para que se vea espacioso */
+  border-radius: 8px; /* Asegura que el botón mantenga el redondeo */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo al hover/active */
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: #f7e7d6; /* Fondo del botón cuando está abierto (mismo que el item) */
+  color: #5F306D; /* Color del texto cuando está abierto */
+  box-shadow: none; /* Eliminar sombra extra al estar abierto */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borde inferior cuando está abierto */
+}
+
+.custom-accordion .accordion-button:focus {
+  box-shadow: none; /* Eliminar el box-shadow por defecto al hacer focus */
+  border-color: transparent; /* Asegura que no haya un borde azul al enfocar */
+}
+
+.custom-accordion .accordion-button::after {
+  /* Personalizar el icono de la flecha */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%235F306D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Flecha morada */
+  transform: rotate(0deg); /* Asegura la posición inicial */
+  transition: transform 0.3s ease-in-out; /* Suaviza la rotación */
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%235F306D'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Flecha morada al estar abierto */
+  transform: rotate(-180deg); /* Gira la flecha cuando está abierto */
+}
+
+.custom-accordion .accordion-body {
+  background-color: #fff; /* Fondo blanco para el contenido de la respuesta */
+  color: #555; /* Color del texto de la respuesta */
+  padding: 20px 25px 25px; /* Padding ajustado */
+  border-top: none; /* Elimina el borde superior del body */
+  border-bottom-left-radius: 8px; /* Redondeo en las esquinas inferiores */
+  border-bottom-right-radius: 8px;
+  line-height: 1.6;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 767.98px) {
+  .custom-accordion .accordion-button {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+  .custom-accordion .accordion-body {
+    font-size: 0.9rem;
+    padding: 15px 20px 20px;
+  }
+}
+
+/* BOTONES :3 */
+/* --- Estilos del botón del Hero --- */
+.btn-hero-custom {
+  border-radius: 7px;
+  border: 2px solid var(--text-color-light); /* Inicialmente solo el borde blanco cremoso */
+  background: transparent; /* Fondo transparente inicialmente */
+  color: var(--text-color-light); /* Texto blanco cremoso inicialmente */
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+}
+
+.btn-hero-custom:hover {
+  background: var(--text-color-light); /* Fondo blanco cremoso al pasar el mouse */
+  color: var(--primary-color-main); /* Texto morado oscuro al pasar el mouse */
+  border-color: var(--text-color-light); /* El borde sigue siendo blanco cremoso (o podrías cambiarlo a --primary-color-main si quieres que también se invierta) */
+}
+
+
+
+/* 5. SECCIONES */
+section {
+  padding: 100px 0;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/*
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--primary-color);
+  margin: 20px auto 0;
+}
+*/
+
+/* 6. CARDS */
+.card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* 7. TESTIMONIOS */
+.blockquote {
+  background-color: var(--light-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/*--------------------------------------------------------------
+# FOOTER: Pie de página
+--------------------------------------------------------------*/
+#main-footer {
+  background-color: #5F306D; /* Color de fondo morado oscuro, como en la imagen */
+  color: #FFF3E5; /* Color de texto general para el footer (blanco cremoso) */
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  font-family: 'Georgia', serif; /* O la fuente que uses para el logo */
+  font-size: 1.8rem; /* Tamaño del logo "UVACLUB" */
+  font-weight: bold;
+  color: #FFF3E5; /* Color blanco cremoso para el logo */
+}
+
+.footer-description {
+  color: #DDD; /* Color ligeramente más oscuro para el texto descriptivo */
+  line-height: 1.6;
+  max-width: 400px; /* Limita el ancho del texto descriptivo para mejor lectura */
+}
+
+.footer-social-icons .social-icon {
+  color: #FFF3E5; /* Color blanco cremoso para los iconos */
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons .social-icon:hover {
+  color: #FFD700; /* Color dorado al pasar el mouse sobre los iconos (opcional) */
+}
+
+.footer-links li {
+  margin-bottom: 8px; /* Espacio entre los elementos de la lista */
+}
+
+.footer-link {
+  color: #FFF3E5; /* Color blanco cremoso para los enlaces de navegación */
+  text-decoration: none;
+  text-transform: uppercase; /* Mayúsculas para los enlaces */
+  font-weight: 600; /* Ligeramente más grueso */
+  transition: color 0.3s ease;
+  font-size: 0.95rem; /* Tamaño de fuente para los enlaces */
+}
+
+.footer-link:hover {
+  color: #FFD700; /* Color dorado al pasar el mouse sobre los enlaces (opcional) */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria suave */
+}
+
+.footer-copyright {
+  color: #DDD; /* Color más oscuro para el copyright */
+  font-size: 0.85rem;
+  margin-top: 10px; /* Pequeño margen desde la línea */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) { /* Tabletas */
+  #main-footer .container .row {
+    text-align: center !important; /* Centra el contenido en tabletas */
+    justify-content: center;
+  }
+  .footer-col-left {
+    text-align: center !important; /* Asegura el centrado de la columna izquierda */
+  }
+  .footer-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-social-icons {
+    margin-bottom: 30px; /* Espacio debajo de los iconos en tabletas */
+  }
+  .col-lg-7 .row { /* Ajuste para las sub-columnas de enlaces */
+    justify-content: center;
+  }
+  .col-lg-3.offset-lg-3 { /* Eliminar el offset en tabletas */
+    offset: 0;
+  }
+  .footer-bottom {
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+  }
+}
+
+@media (max-width: 767.98px) { /* Móviles */
+  .footer-logo {
+    font-size: 1.6rem;
+  }
+  .footer-social-icons .social-icon {
+    font-size: 1.3rem;
+    margin: 0 8px; /* Ajusta el espacio entre iconos en móviles */
+  }
+  .footer-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* 10. IMÁGENES */
+img.rounded-circle {
+  border: 5px solid var(--light-color);
+}
+
+/* 11. GALERÍA */
+.container .row img {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container .row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================== */
+/* CUSTOM HELPER CLASSES */
+/* ============================== */
+
+/* ============================== */
+/* CUSTOM HELPER CLASSES */
+/* ============================== */
+
+/* TITULOS */
+.h1-custom {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-color);
+}
+
+.h2-custom {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark-color);
+}
+
+.h3-custom {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--dark-color);
+}
+
+.h4-custom {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* PÁRRAFOS Y TEXTOS */
+.p-custom {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+/* FONDOS E IMÁGENES */
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-overlay-light {
+  background-color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(5px);
+}
+
+.bg-overlay-dark {
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+.img-rounded {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* TEXTOS ADICIONALES */
+.text-uppercase-custom {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-muted-custom {
+  color: #6c757d;
+}
+
+/* ESPACIADOS */
+.section-spacing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-spacing-sm {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+/* ============================== */
+/* MEDIA QUERIES */
+/* ============================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .masonry__container {
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .masonry__container {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .masonry__container {
+    column-count: 1;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# 4. HERO SECTION - PÁGINA DE DETALLE DE PLAN
+--------------------------------------------------------------*/
+#hero-plan-detalle {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* *** FONDO COMBINADO: IMAGEN PRIMERO, LUEGO GRADIENTE *** */
+  background:
+    url('img/fondo-textura-hero.png') center center / cover no-repeat, /*  imagen de fondo */
+    linear-gradient(180deg, #3C0136 0%, #F1ECC9 100%); /* degradado */
+
+  /* *** AÑADIR BACKGROUND-BLEND-MODE *** */
+  background-blend-mode: multiply, normal; /* CLAVE para mezclar la imagen de fondo con el gradiente */
+
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Estilos para el texto y la imagen dentro del .container del Hero de detalle */
+#hero-plan-detalle .container {
+  padding-top: 120px; /* Asegura un buen espacio superior para el contenido */
+  padding-bottom: 60px;
+}
+
+/* Estilos específicos para el texto del Hero de detalle para asegurar legibilidad sobre el fondo */
+#hero-plan-detalle h1.h1-custom {
+  color: #FBEDDD; /* Color de texto blanco para contrastar con fondo oscuro */
+  margin-bottom: 20px;
+  font-size: 3.5rem; /* Ajusta el tamaño de la fuente si es necesario */
+  line-height: 1.2;
+}
+
+#hero-plan-detalle p.p-custom {
+  color: #FBEDDD; /* Blanco semi-transparente para párrafos */
+  max-width: 450px; /* Limita el ancho del párrafo para mejor lectura */
+  margin-bottom: 30px;
+}
+
+/* --- ESTILOS PARA EL PRECIO Y "POR MES" --- */
+#hero-plan-detalle .price-container {
+  display: flex; /* Usamos flexbox para alinear el precio y el texto "Por mes" */
+  flex-direction: column; /* Apilamos los elementos verticalmente */
+  align-items: flex-start; /* Alinea los ítems a la izquierda del contenedor */
+  margin-bottom: 20px; /* Espacio debajo del contenedor del precio */
+}
+
+#hero-plan-detalle .price-container .price {
+  color: #FBEDDD; /* Color de texto para el precio */
+  font-size: 3.5rem; /* Tamaño de fuente del precio */
+  font-weight: bold; /* Negrita para el precio */
+  line-height: 1; /* Asegura que no haya espacio extra alrededor del número */
+}
+
+#hero-plan-detalle .price-container .price-period {
+  color: #FBEDDD; /* Color de texto para "Por mes" */
+  font-size: 1.2rem; /* Tamaño de fuente para "Por mes" */
+  font-weight: normal; /* No tan negrita como el precio */
+  margin-top: 5px; /* Pequeño espacio entre el precio y "Por mes" */
+  line-height: 1; /* Elimina espacio extra */
+}
+
+
+/* Contenedor de la imagen al lado del texto en el Hero de detalle */
+#hero-plan-detalle .col-lg-6.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Imagen principal dentro del Hero de detalle (la que está al lado del título) */
+#hero-plan-detalle .col-lg-6 img {
+  max-width: 650px; /* Ajusta el tamaño máximo de la imagen */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* Mantiene el borde redondeado si img-rounded no lo está aplicando bien */
+  box-shadow: none !important; /* ¡Elimina cualquier sombra en estado normal! */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Asegura una transición suave si hay otros efectos */
+}
+
+/* Regla para eliminar cualquier sombra o transformación al pasar el mouse en la imagen del Hero de detalle */
+#hero-plan-detalle .col-lg-6 img:hover {
+  box-shadow: none !important; /* Asegura que NO haya sombra al pasar el mouse */
+  transform: none !important; /* Asegura que NO haya ningún escalado o movimiento al pasar el mouse */
+}
+
+/* --- Estilos del botón del Hero de detalle (pueden ser los mismos que btn-hero-custom) --- */
+#hero-plan-detalle .btn-hero-custom {
+  border-radius: 7px;
+  border: 3px solid var(--text-color-light); /* Borde blanco cremoso */
+  background: var(--text-color-light); /* Fondo blanco cremoso */
+  color: var(--primary-color-main); /* Texto morado oscuro */
+  padding: 12px 30px; /* Ajusta el padding para el tamaño del botón */
+  font-weight: 600; /* Texto seminegrita */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+#hero-plan-detalle .btn-hero-custom:hover {
+  background: transparent; /* Fondo transparente al pasar el mouse */
+  color: var(--text-color-light); /* Texto blanco cremoso al pasar el mouse */
+  border-color: var(--text-color-light); /* Borde blanco cremoso al pasar el mouse */
+}
+
+/* Media Queries para el Hero de detalle */
+@media (max-width: 991.98px) { /* Tablet */
+  #hero-plan-detalle {
+    min-height: auto;
+    padding: 90px 0 44px 0;
+  }
+  #hero-plan-detalle .col-lg-6.text-center {
+    margin-top: 40px;
+  }
+  #hero-plan-detalle h1.h1-custom {
+    font-size: 3rem;
+  }
+  /* Ajustar el tamaño del precio y "Por mes" en tablet */
+  #hero-plan-detalle .price-container .price {
+    font-size: 2.8rem;
+  }
+  #hero-plan-detalle .price-container .price-period {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) { /* Mobile */
+  #hero-plan-detalle {
+    text-align: center;
+  }
+  #hero-plan-detalle .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  #hero-plan-detalle h1.h1-custom {
+    font-size: 2.2rem;
+  }
+  #hero-plan-detalle p.p-custom {
+    font-size: 0.9rem;
+  }
+  #hero-plan-detalle .col-lg-6.text-center {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  #hero-plan-detalle .btn-hero-custom {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  /* Asegurar que el price-container se centre en mobile si la columna es text-center */
+  #hero-plan-detalle .price-container {
+      align-items: center; /* Centra los items en mobile si el contenedor padre es text-align: center */
+  }
+  #hero-plan-detalle .price-container .price {
+    font-size: 2.5rem;
+  }
+  #hero-plan-detalle .price-container .price-period {
+    font-size: 0.9rem;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# SECCIÓN: QUE INCLUYE LA CAJA (PÁGINA DE DETALLE)
+--------------------------------------------------------------*/
+#plan-caja {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--secondary-color-pink); /* Fondo beige rosado como en la imagen */
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+  position: relative; /* Necesario para la textura de fondo */
+  overflow: hidden; /* Oculta partes de la textura si se desbordan */
+}
+
+/* Textura de uvas en el fondo de la sección */
+#plan-caja::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/img/hojas-uvas-top.png'); /* FONDO TEXTURA */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover; /* Ajusta según necesites */
+  opacity: 0.3; /* ajusta la opacidad para que sea sutil */
+  z-index: 0; /* detrás del contenido */
+}
+
+
+#plan-caja h2.h2-custom {
+  color: var(--heading-color); /* Morado oscuro para el título */
+  font-weight: bold;
+  z-index: 1; /* Asegura que el título esté por encima de la textura */
+  position: relative;
+}
+
+#plan-caja p.p-custom {
+  color: var(--text-color-dark); /* Gris oscuro para el párrafo introductorio */
+  line-height: 1.7;
+  z-index: 1; /* Asegura que el párrafo esté por encima de la textura */
+  position: relative;
+}
+
+
+
+#plan-caja .row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas más pequeñas */
+}
+
+/* Estilos de las tarjetas - SIN CAMBIOS DE FONDO NI SOMBRA */
+.box-content-card {
+  border-radius: 10px;
+  padding: 30px; /* Mantén el padding original */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido de cada tarjeta arriba */
+  z-index: 1; /* Asegura que la tarjeta esté por encima de la textura */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* NO SE AÑADE background-color ni box-shadow AQUÍ */
+}
+
+.box-content-card:hover {
+  transform: translateY(-8px); /* Efecto de elevación al hover */
+}
+
+.box-content-img {
+  width: 300px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  object-fit: contain;
+  padding: 10px;
+  margin-bottom: 25px;
+  /* border-radius: 8px; */ /* Bootstrap rounded-lg ya lo maneja si lo usas */
+}
+
+
+.box-content-card h5.box-content-title { 
+  color: #5F306D; /* Titulo de las tarjetas de detalle */
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  min-height: 2.8rem; /* Ajusta si es necesario, 2.8rem para 2 líneas de 1.4rem + line-height */
+  display: flex; /* Flex para centrar el texto verticalmente si es de una línea */
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+}
+
+
+.box-content-card p.box-content-description { /* Selector más específico para la descripción */
+  color: rgba(255, 255, 255, 0.8); 
+  line-height: 1.6;
+  flex-grow: 1; /* Para que ocupe el espacio restante y empuje el contenido si hay más */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 767.98px) {
+  /* Quita display:flex y align-items:stretch de .row en mobile si las apilas */
+  #plan-caja .row {
+    flex-direction: column; /* Apila las tarjetas en mobile */
+    align-items: center; /* Centra las tarjetas apiladas */
+  }
+  .box-content-img {
+    width: 150px;
+  }
+  .box-content-card h5.box-content-title {
+    font-size: 1.2rem;
+    min-height: auto; /* No necesitas altura mínima en mobile si el texto se ajusta bien */
+  }
+  .box-content-card p.box-content-description {
+    font-size: 0.85rem;
+  }
+  .box-content-card {
+    padding: 20px;
+    width: 90%; /* Ajusta el ancho de la tarjeta en mobile */
+    margin-bottom: 20px; /* Espacio entre las tarjetas apiladas */
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: WINESWAP (PÁGINA DE DETALLE)
+--------------------------------------------------------------*/
+#wineswap {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color-pink);
+  background: url('img/textura-de-carton.png') #FBEDDD 60% / cover no-repeat;
+  background-blend-mode: luminosity;
+}
+
+#wineswap .background-texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/img/hojas-uvas-top.png') center top / cover no-repeat;
+  background-blend-mode: normal;
+  opacity: 1;
+  z-index: 0;
+}
+
+#wineswap .container {
+  position: relative;
+  z-index: 1;
+}
+
+#wineswap h2.h2-custom {
+  color: var(--heading-color);
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+#wineswap p.p-custom {
+  color: var(--text-color-dark);
+  line-height: 1.7;
+}
+
+/* Estilos de los iconos PNG de los ítems */
+.wineswap-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  /* El margen derecho me-lg-3 se aplica en el HTML */
+}
+
+/* Contenedor del texto (título y descripción) */
+.wineswap-text-content {
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda por defecto */
+}
+
+/* Estilos de los títulos de cada ítem (Encuentra tu Vino, Propón un Intercambio, etc.) */
+.wineswap-item-title {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 5px;
+}
+
+/* Estilos de la descripción de cada ítem */
+.wineswap-item-description {
+  color: var(--text-color-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0; /* Asegura que no haya margen superior adicional */
+}
+
+/* Imagen principal de la sección WineSwap a la derecha */
+.wineswap-main-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 991.98px) { /* Tablet */
+  #wineswap .text-lg-start {
+    text-align: center !important;
+  }
+  #wineswap .justify-content-lg-start {
+    justify-content: center !important;
+  }
+  #wineswap h2.h2-custom {
+    font-size: 2.8rem;
+  }
+  .wineswap-main-img {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767.98px) { /* Mobile */
+  #wineswap h2.h2-custom {
+    font-size: 2.2rem;
+  }
+  .wineswap-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px; /* Margen inferior para separar el icono del texto */
+    margin-right: 0 !important; /* Elimina el margen derecho del icono en mobile */
+  }
+  .wineswap-item-title {
+    font-size: 1.05rem;
+  }
+  .wineswap-item-description {
+    font-size: 0.85rem;
+  }
+
+  /* --- CLAVE PARA EL ORDEN EN RESPONSIVE --- */
+  .feature-item {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra el icono y el texto horizontalmente */
+    text-align: center; /* Centra el texto dentro del ítem */
+  }
+
+  .wineswap-text-content {
+      text-align: center; /* Centra el contenido de texto para mobile */
+  }
+}
+
+/*--------------------------------------------------------------
+# SECCIÓN: PLANES ALTERNATIVOS (EN PÁGINA DE DETALLE)
+--------------------------------------------------------------*/
+#planes-alternativos {
+  /* Puedes darle el mismo fondo si quieres que se vea igual que la sección de planes principal */
+  background:
+    url('img/textura-planes-principal.png') center center / cover no-repeat, /* Reutiliza tu textura de fondo */
+    linear-gradient(180deg, #5F3252 0%, #FFF3E5 100%);
+  background-blend-mode: multiply, normal;
+  padding-top: var(--section-padding); /* Reutiliza el padding de tu variable */
+  padding-bottom: var(--section-padding);
+}
+
+#planes-alternativos h2.h2-custom {
+  color: #FFF3E5; /* Blanco para el título */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#planes-alternativos p.p-custom.mb-5 {
+  color: #FFF3E5; /* Blanco para el párrafo */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+/* Las reglas para .plan-card, .plan-header, .plan-logo, .plan-content,
+   .plan-title, .plan-price, .plan-features, .plan-button, y sus estados hover
+   YA DEBERÍAN ESTAR DEFINIDAS bajo #planes-suscripcion o como clases generales.
+   No necesitas duplicarlas aquí a menos que quieras estilos DIFIERENTES
+   para los planes alternativos. Si quieres que se vean idénticos, no añadas más CSS.
+*/
+
+/* Si por alguna razón los estilos no se aplicaran (debido a especificidad de #planes-suscripcion),
+   puedes copiar y pegar los selectores relevantes y cambiar #planes-suscripcion por #planes-alternativos.
+   Pero normalmente, si .plan-card es una clase general, debería funcionar.
+   Si necesitas que se apliquen los mismos estilos de fondo a los h2 y p,
+   asegúrate de que estas reglas se apliquen a #planes-alternativos.
+*/
