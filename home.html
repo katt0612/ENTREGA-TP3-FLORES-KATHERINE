@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla Visible - Belluccia 3</title>
+
+    <!-- Tipografía desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Framework CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR: Menú de navegación fijo superior -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Logo o nombre del sitio -->
+    <a class="navbar-brand" href="#">UBACLUB</a>
+    <!-- Botón para mostrar menú en mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Ítems del menú -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes somos?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#planes-suscripcion">Suscripciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonios">Opiniones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">Preguntas frecuentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- /NAVBAR -->
+
+<!-- HERO: Sección de portada con llamado a la acción -->
+<section class="hero section-spacing d-flex align-items-center justify-content-between">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="h1-custom">TU PASIÓN POR EL VINO RENOVADA CADA MES</h1>
+        <p class="p-custom">Sumate a UvaClub y descorchá un mundo de sabores elegidos especialmente para vos.</p>
+        <div class="mt-4"> <a href="#quienes-somos" class="btn btn-hero-custom">Saber más</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="img/hero-principal-con-sombra.png" class="img-fluid img-rounded" alt="Caja de vinos UvaClub con botellas y quesos">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /HERO -->
+  
+  <!-- QUIENES SOMOS -->
+<section id="quienes-somos" class="section-spacing text-center">
+  <div class="container"> <div class="section-title-wrapper">
+      <h2 class="h2-custom h2-custom-con-lineas text-uppercase">NUESTRA HISTORIA: MÁS QUE VINOS</h2>
+    </div>
+    <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+      En UvaClub, nuestra historia es la de una pasión compartida por el mundo del vino. Somos más que un servicio de suscripción; somos un puente entre vos y las bodegas más auténticas, los sabores más inesperados y una comunidad que crece con cada descorche.
+    </p>
+
+    <div class="row align-items-center mt-5">
+      <div class="col-lg-6 text-center mb-4 mb-lg-0 position-relative">
+        <img src="img/amigos-con-vinos.png" class="img-fluid rounded-4 about-image" alt="Amigos compartiendo una copa de vino">
+        <div class="about-image-overlay"></div>
+      </div>
+      <div class="col-lg-6 text-center text-lg-start">
+        <h3 class="h2-custom mb-3">La esencia de UvaClub</h3>
+        <p class="p-custom mb-4">
+          Nacimos con un propósito claro: democratizar el acceso al vino de calidad y al conocimiento que lo rodea. Queremos que cada socio de UvaClub descubra, aprenda y disfrute de botellas únicas, seleccionadas con el máximo rigor, transformando cada degustación en una aventura personal e inolvidable.
+        </p>
+        <a href="#planes-suscripcion" class="btn btn-outline-primary btn-lg custom-btn-outline-gold">Conocé más</a>
+      </div>
+    </div>
+  </div> </section>
+<!-- /QUIENES SOMOS -->
+  
+  <!-- ¿QUE OFRECEMOS?-->
+<section id="que-ofrecemos" class="section-spacing container text-center">
+  <h2 class="h2-custom mb-5 text-uppercase fw-bold">¿CÓMO FUNCIONA UVACLUB?</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="offer-card h-100 p-4">
+        <img src="img/como-funciona-icon-1.png" alt="Vinos Seleccionados" class="offer-icon mb-3">
+        <h5 class="fw-bold">VINOS SELECCIONADOS</h5>
+        <p class="p-custom">Nuestros catadores seleccionan los mejores vinos para vos cada mes vas a recibir un vino exclusivo.</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="offer-card h-100 p-4">
+        <img src="img/como-funciona-icon-2.png" alt="Descuentos Exclusivos" class="offer-icon mb-3">
+        <h5 class="fw-bold">DESCUENTOS EXCLUSIVOS</h5>
+        <p class="p-custom">Con cualquier plan que elijas obtendrás descuentos de diferentes bodegas.</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="offer-card h-100 p-4">
+        <img src="img/como-funciona-icon-3.png" alt="Envíos Gratis" class="offer-icon mb-3">
+        <h5 class="fw-bold">ENVÍOS GRATIS</h5>
+        <p class="p-custom">Disfruta de envíos gratuitos a todo el país. Guarda hasta 10 cajas en nuestra cava con control de clima para una evolución perfecta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="planes-suscripcion" class="section-spacing text-center">
+  <div class="container">
+    <h2 class="h2-custom text-uppercase">ELIGE TU AVENTURA ENOLÓGICA</h2>
+    <p class="p-custom mb-5 mx-auto" style="max-width: 700px;">
+      Descubrí la curaduría experta de UvaClub y una comunidad que vive el vino. Opciones flexibles para que cada copa sea una nueva historia.
+    </p>
+
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="plan-card" data-plan="descubridor">
+          <div class="plan-header">
+            <img src="img/caja-para-planes-1.png" alt="El Descubridor" class="plan-logo img-fluid">
+          </div>
+          <div class="plan-content p-4">
+            <h5 class="plan-title text-uppercase">EL DESCUBRIDOR</h5>
+            <p class="plan-price">$10.500 <small>/ mes</small></p>
+
+            <ul class="plan-features list-unstyled text-start mx-auto">
+              <li><i class="bi bi-check-circle-fill"></i> 2 Vinos Premium al Mes</li>
+              <li><i class="bi bi-check-circle-fill"></i> Fichas de Cata Digitales (vía QR)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Acceso a Video Cátedra Seleccionada</li>
+              <li><i class="bi bi-check-circle-fill"></i> Regalo de Bienvenida Digital</li>
+              <li><i class="bi bi-check-circle-fill"></i> Posibilidad de Upgrade de Plan</li>
+            </ul>
+
+            <a href="plan-de-suscripcion-detalles.html" class="btn plan-button mt-4">¡LO QUIERO!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="plan-card" data-plan="explorador">
+          <div class="plan-header">
+            <img src="img/caja-para-planes-2.png" alt="El Explorador" class="plan-logo img-fluid">
+          </div>
+          <div class="plan-content p-4">
+            <h5 class="plan-title text-uppercase">EL EXPLORADOR</h5>
+            <p class="plan-price">$15.500 <small>/ mes</small></p>
+
+            <ul class="plan-features list-unstyled text-start mx-auto">
+              <li><i class="bi bi-check-circle-fill"></i> 3 Vinos Exclusivos al Mes</li>
+              <li><i class="bi bi-check-circle-fill"></i> Fichas de Cata Impresas y Digitales</li>
+              <li><i class="bi bi-check-circle-fill"></i> Maridaje Gourmet Superior o Doble</li>
+              <li><i class="bi bi-check-circle-fill"></i> Cupón 10% de Descuento en Vinotecas y VIP</li>
+              <li><i class="bi bi-check-circle-fill"></i> Programa WineSwap</li>
+            </ul>
+
+            <a href="plan-de-suscripcion-detalles.html" class="btn plan-button mt-4">¡LO QUIERO!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-4 mb-4">
+        <div class="plan-card" data-plan="sommelier">
+          <div class="plan-header">
+            <img src="img/caja-para-planes-3.png" alt="El Sommelier" class="plan-logo img-fluid">
+          </div>
+          <div class="plan-content p-4">
+            <h5 class="plan-title text-uppercase">EL SOMMELIER</h5>
+            <p class="plan-price">$17.900 <small>/ mes</small></p>
+
+            <ul class="plan-features list-unstyled text-start mx-auto">
+              <li><i class="bi bi-check-circle-fill"></i> 3 Vinos Premium al Mes</li>
+              <li><i class="bi bi-check-circle-fill"></i> Fichas de Cata Impresas y Digitales</li>
+              <li><i class="bi bi-check-circle-fill"></i> Maridaje Gourmet Sorpresa</li>
+              <li><i class="bi bi-check-circle-fill"></i> Cupón 10% de Descuento en Vinotecas</li>
+              <li><i class="bi bi-check-circle-fill"></i> Programa WineSwap</li>
+            </ul>
+
+            <a href="plan-de-suscripcion-detalles.html" class="btn plan-button mt-4">¡LO QUIERO!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
+  <!-- BENEFICIOS -->
+<section id="proxima-aventura" class="section-spacing position-relative">
+  <div class="background-texture-overlay"></div>
+  <div class="container position-relative z-index-1">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-center text-lg-start">
+        <h2 class="h2-custom mb-3 text-uppercase">¿POR QUÉ ELEGIR UVACLUB?</h2>
+        <p class="p-custom mb-4 text-white-75">
+          Descubrí cómo UvaClub transforma cada descorche en una experiencia única. <br> Más allá de cada botella, te ofrecemos un mundo de beneficios exclusivos <br> pensados para vos.
+        </p>
+
+        <div class="row text-center text-lg-start mt-4">
+          <div class="col-sm-6 mb-3">
+            <div class="feature-item d-flex align-items-center justify-content-center justify-content-lg-start">
+           <i class="bi bi-star-fill me-2 feature-icon-light"></i>
+             <span>Selección Premium</span> 
+          </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="feature-item d-flex align-items-center justify-content-center justify-content-lg-start">
+              <i class="bi bi-patch-check-fill me-2 feature-icon-light"></i>
+              <span>Experiencias Exclusivas</span>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="feature-item d-flex align-items-center justify-content-center justify-content-lg-start">
+              <i class="bi bi-people-fill me-2 feature-icon-light"></i>
+              <span>Comunidad de Amantes</span>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="feature-item d-flex align-items-center justify-content-center justify-content-lg-start">
+              <i class="bi bi-tags-fill me-2 feature-icon-light"></i>
+              <span>Beneficios Únicos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <img src="img/mujer-con-caja.png" class="img-fluid img-rounded-custom" alt="Imagen de Aventura UvaClub">
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- TEAM: Presentación del equipo -->
+<section id="nuestro-equipo" class="section-spacing container text-center">
+  <h2 class="h2-custom mb-4 text-uppercase fw-bold">CONOCE A NUESTRO EQUIPO</h2>
+  <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+    Detrás de cada selección y experiencia de UvaClub, hay un equipo apasionado de expertos y amantes del buen vivir dedicados a democratizar el acceso al vino de calidad y al conocimiento que lo rodea.
+  </p>
+  <div class="row justify-content-center">
+    
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="team-member-card h-100 p-4">
+        <img src="img/equipo-sommerlier-1.png" alt="Sommelier Principal" class="img-fluid rounded-lg mb-3 team-photo">
+        <h6 class="team-small-name">ISABEL MACIEL</h6> <h5 class="fw-bold team-role-main">SOMMELIER <br> PRINCIPAL</h5> <p class="p-custom team-bio">Con años de experiencia en el mundo del vino, su paladar experto garantiza que solo lo mejor llegue a tu copa.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="team-member-card h-100 p-4">
+        <img src="img/chef-gourmet-2.png" alt="Experto en Maridajes" class="img-fluid rounded-lg mb-3 team-photo">
+        <h6 class="team-small-name">FERNANDO ROGRIGUEZ</h6>
+        <h5 class="fw-bold team-role-main">EXPERTO EN MARIDAJES</h5>
+        <p class="p-custom team-bio">Combinando su pasión por la gastronomía y el vino, crea experiencias únicas para elevar tus momentos.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 mb-4">
+      <div class="team-member-card h-100 p-4">
+        <img src="img/equipo-sommerlier-3.png" alt="Curador de Contenido" class="img-fluid rounded-lg mb-3 team-photo">
+        <h6 class="team-small-name">ROCÍO AYALA</h6>
+        <h5 class="fw-bold team-role-main">CURADOR DE CONTENIDO</h5>
+        <p class="p-custom team-bio">Su misión es traducir el complejo mundo del vino en contenido accesible y apasionante para todos los socios.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<!-- /TEAM -->
+  
+  <!-- GALERÍA B: Masonry layout con column-count (hay controles en el css)-->
+<section id="galeria-comunidad" class="section-spacing">
+    <div class="container">
+        <div class="galeria-fondo-limitado">
+            <h2 class="h2-custom mb-3 text-uppercase fw-bold">NUESTRA COMUNIDAD EN IMÁGENES</h2>
+            <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+                Descubre la pasión compartida y los momentos inolvidables que vivimos junto a nuestros socios. ¡Únete a la familia UvaClub!
+            </p>
+    <div class="masonry__container">
+    <img class="masonry__item" src="img/galeria-1.png" alt="Amigos compartiendo vino">
+    <img class="masonry__item" src="img/galeria-2.png" alt="Brindis">
+    <img class="masonry__item" src="img/galeria-3.png" alt="Mesa con quesos y vino">
+    <img class="masonry__item" src="img/galeria-4.png" alt="Caja UvaClub y botellas">
+    <img class="masonry__item" src="img/galeria-5.png" alt="Lectura y vino">
+    <img class="masonry__item" src="img/galeria-6.png" alt="Grupo disfrutando vino">
+    </div>
+          </div>
+</div>
+</section>
+
+  
+<!-- TESTIMONIALS: Opiniones de clientes -->
+<section id="testimonios" class="section-spacing container text-center">
+  <h2 class="h2-custom mb-3 text-uppercase fw-bold">SUS VOCES, SUS EXPERIENCIAS</h2>
+  <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+    La mejor forma de conocer UvaClub es a través de quienes ya viven la pasión por el vino con nosotros. Aquí compartimos algunas de sus experiencias y lo que más valoran de ser parte de nuestra comunidad.
+  </p>
+
+  <div id="testimoniosCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-1.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Matil248">
+                  <div>
+                    <span class="testimonial-username">@MATI1248</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">EXCELENTE</h5>
+              <blockquote class="testimonial-text">
+                “¡UvaClub es un descubrimiento constante! La curaduría es impecable y siempre me sorprenden con vinos que no conocía. Además, el material de cata me ayuda a disfrutar muchísimo más cada botella.”
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-2.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Milu_Estrada">
+                  <div>
+                    <span class="testimonial-username">@MILU_ESTRADA</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">MUY BUENO</h5>
+              <blockquote class="testimonial-text">
+                “Soy fan del WineSwap. Pude cambiar un tinto que me había llegado repetido por un blanco increíble. La plataforma es muy fácil de usar y el envío gratis para los intercambios es un golazo.”
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-3.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Anonimo3495">
+                  <div>
+                    <span class="testimonial-username">@ANONIMO3495</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">EXCELENTE</h5>
+              <blockquote class="testimonial-text">
+                “La comodidad de recibir una caja tan bien pensada en casa, con los maridajes y los videos, es un lujo. Se nota la pasión en cada detalle. ¡Totalmente recomendable para cualquier amante del vino!”
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-4.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Usuario 4">
+                  <div>
+                    <span class="testimonial-username">@USER4XYZ</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-twitter"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">MUY BUENA ATENCIÓN</h5>
+              <blockquote class="testimonial-text">
+                “La atención al cliente es fantástica, siempre dispuestos a ayudar y resolver cualquier duda. Súper recomendado para principiantes y expertos.”
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-5.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Usuario 5">
+                  <div>
+                    <span class="testimonial-username">@WINE_LOVER_ARG</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-facebook"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">IMPECABLE</h5>
+              <blockquote class="testimonial-text">
+                “La calidad de los vinos seleccionados es top. Siempre descubriendo etiquetas que no conocía y que se vuelven mis favoritas.”
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                  <img src="img/icon-perfil-6.jpg" class="testimonial-avatar rounded-circle me-3" alt="Avatar Usuario 6">
+                  <div>
+                    <span class="testimonial-username">@VINOS_FAN</span>
+                    <a href="#" class="ms-2 social-icon"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <h5 class="testimonial-title">GRAN COMUNIDAD</h5>
+              <blockquote class="testimonial-text">
+                “Me encanta poder compartir mis experiencias y aprender de otros miembros de la comunidad. Es mucho más que un club de vinos.”
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+    <div class="carousel-indicators mt-4">
+      <button type="button" data-bs-target="#testimoniosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#testimoniosCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+  </div>
+</section>
+<!-- /TESTIMONIALS -->
+  
+<!-- FAQS: Preguntas frecuentes -->
+<section id="faq" class="section-spacing container text-center">
+  <h2 class="h2-custom mb-3 text-uppercase fw-bold">TODO LO QUE NECESITÁS SABER SOBRE UVACLUB</h2>
+  <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+    Sabemos que tenés preguntas, y estamos acá para responderlas. Encontrá a continuación las dudas más comunes sobre nuestros planes, envíos, el programa WineSwap y mucho más.
+  </p>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8"> <div class="accordion custom-accordion" id="faqAccordion">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              ¿Qué es UvaClub y cómo funciona?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              UvaClub es tu pasaporte al mundo del vino. Somos un servicio de suscripción mensual que te permite recibir en la puerta de tu casa una selección exclusiva de vinos premium curados por expertos sommeliers. Cada caja incluye fichas de cata, maridajes sugeridos y acceso a nuestra comunidad online, donde podrás aprender, compartir y hasta intercambiar vinos.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              ¿Qué tipo de vinos puedo esperar?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Nuestros sommeliers eligen vinos de bodegas boutique y reconocidas, con un enfoque en la calidad y la diversidad. Recibirás etiquetas de diferentes varietales, regiones y añadas, adaptadas a tu perfil de gusto (que puedes configurar al suscribirte). Desde tintos robustos hasta blancos frescos y espumosos vibrantes, siempre habrá una sorpresa deliciosa.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              ¿Cómo se realizan los envíos y cuál es su costo?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Los envíos se realizan una vez al mes, en la primera semana, a todo el país. El costo de envío está incluido en todos nuestros planes de suscripción, por lo que no tendrás que pagar extra por recibir tus vinos. Utilizamos un sistema de embalaje especial que protege cada botella durante el transporte.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              ¿Cómo hace que los vinos lleguen en perfectas condiciones?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Nos preocupamos por la integridad de tus vinos. Cada botella se embala individualmente en cajas de cartón reforzado con compartimentos acolchados diseñados para evitar roturas y cambios bruscos de temperatura. Además, trabajamos con empresas de logística especializadas en productos delicados para asegurar que cada botella llegue a tus manos en óptimas condiciones, lista para ser disfrutada.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /FAQS -->
+
+<!-- CONTACT FORM: Formulario de contacto -->
+<section id="contacto" class="section-spacing container text-center">
+  <h2 class="h2-custom mb-3 text-uppercase fw-bold">HABLEMOS DE VINOS</h2>
+  <p class="p-custom mb-5 mx-auto" style="max-width: 800px;">
+    ¿Tenés alguna pregunta sobre nuestros planes, tus vinos o necesitás asistencia? No dudes en contactarnos. Nuestro equipo de UvaClub está para brindarte el mejor servicio.
+  </p>
+  
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="contact-image-container position-relative">
+        <img src="img/contacto_img.png" alt="Botella de vino y mesa con quesos" class="img-fluid rounded-custom shadow-lg">
+        <div class="contact-image-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <form class="contact-form p-4">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Apellido">
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Correo electrónico">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Asunto">
+        </div>
+        <div class="mb-4">
+          <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary-custom w-100">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- /CONTACT FORM -->
+
+
+
+
+<!-- FOOTER: Pie de página -->
+<footer id="main-footer" class="py-5">
+  <div class="container">
+    <div class="row align-items-start">
+
+      <div class="col-lg-5 col-md-12 mb-4 mb-lg-0 text-start footer-col-left">
+        <h4 class="footer-logo mb-3">UVACLUB</h4>
+        <p class="footer-description mb-4">
+          UvaClub brinda acceso a vinos seleccionados por sommeliers, guías de cata interactivas y beneficios de comunidad como WineSwap, entregados directamente en tu hogar con embalaje seguro.
+        </p>
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon me-3"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-icon me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon me-3"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-12">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-3 offset-lg-3 mb-3 mb-md-0 text-start">
+            <ul class="list-unstyled footer-links">
+              <li><a href="#" class="footer-link">INICIO</a></li>
+              <li><a href="#" class="footer-link">QUIENES SOMOS</a></li>
+              <li><a href="#" class="footer-link">PRODUCTOS</a></li>
+              <li><a href="#" class="footer-link">ASESOR</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3 mb-3 mb-md-0 text-start">
+            <ul class="list-unstyled footer-links">
+              <li><a href="#" class="footer-link">COMUNIDAD</a></li>
+              <li><a href="#" class="footer-link">CENTRO DE AYUDA</a></li>
+              <li><a href="#" class="footer-link">PUNTOS DE VENTA</a></li>
+              <li><a href="#" class="footer-link">CONTACTO</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom mt-5 pt-4 text-center">
+      <p class="footer-copyright mb-0">© 2025 UvaClub. Todos los derechos reservados.</p>
+    </div>
+
+  </div>
+</footer>
+<!-- /FOOTER -->
+
+<!-- Bootstrap Bundle JS (incluye Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+<!-- Script personalizado para cambiar el navbar al hacer scroll -->
+<script>
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+
+<!-- Scripts adicionales -->
+<script src="scripts.js"></script>
+</body>
+</html>
